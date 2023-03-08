@@ -20,7 +20,7 @@ export default {
 
         const allRoles = await Role.findAll();
         const userRoles = interaction.member.roles.cache;
-        let permiso = false;
+        let permiso = true;
         allRoles.forEach(role => {
             console.log(role);
             console.log(userRoles.get(role.id));
