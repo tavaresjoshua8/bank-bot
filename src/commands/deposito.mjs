@@ -29,8 +29,6 @@ export default {
         const userRoles = interaction.member.roles.cache;
         let permiso = false;
         allRoles.forEach(role => {
-            console.log(role);
-            console.log(userRoles.get(role.id));
             if(userRoles.get(role.id)) {
                 permiso = true;
             }
