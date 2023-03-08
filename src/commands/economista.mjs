@@ -18,21 +18,21 @@ export default {
         const role = interaction.options.getRole('role');
         const del = interaction.options.getBoolean('delete') || false;
 
-        const allRoles = await Role.findAll();
-        const userRoles = interaction.member.roles.cache;
-        let permiso = true;
-        allRoles.forEach(role => {
-            console.log(role);
-            console.log(userRoles.get(role.id));
-            if(userRoles.get(role.id)) {
-                permiso = true;
-            }
-        });
+        // const allRoles = await Role.findAll();
+        // const userRoles = interaction.member.roles.cache;
+        // let permiso = true;
+        // allRoles.forEach(role => {
+        //     console.log(role);
+        //     console.log(userRoles.get(role.id));
+        //     if(userRoles.get(role.id)) {
+        //         permiso = true;
+        //     }
+        // });
 
-        if(!permiso) {
-            await interaction.reply({content: `No tienes permisos para administrar el banco`, ephemeral: true});
-            return;
-        }
+        // if(!permiso) {
+        //     await interaction.reply({content: `No tienes permisos para administrar el banco`, ephemeral: true});
+        //     return;
+        // }
 
         if(del) {
             const rol = await Role.findByPk(role.id);
