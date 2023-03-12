@@ -7,12 +7,12 @@ export default {
     name: Events.ClientReady,
     once: true,
     execute: client => {
-        User.hasMany(Transaction, {foreignKey: 'userId'});
-        Transaction.belongsTo(User);
-
         User.sync();
         Transaction.sync();
         Role.sync();
+
+        User.hasMany(Transaction, {foreignKey: 'userId'});
+        Transaction.belongsTo(User);
         
         console.log(`Ready! Logged in as ${client.user.tag}`);
     }

@@ -5,11 +5,11 @@ export default class Role extends Model { }
 
 Model.init({
     id: {
-        type: DataTypes.TEXT,
+        type: DataTypes.BIGINT,
         primaryKey: true
     },
     name: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         unique: true,
         allowNull: false
     }

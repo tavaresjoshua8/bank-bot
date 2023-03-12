@@ -15,7 +15,7 @@ Transaction.init({
         primaryKey: true
     },
     userId: {
-        type: DataTypes.TEXT,
+        type: DataTypes.BIGINT,
         allowNull: false,
         references: {
             model: User,
