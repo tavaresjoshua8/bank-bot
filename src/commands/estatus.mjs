@@ -13,13 +13,13 @@ export default {
 
         let permiso = false;
         allRoles.forEach(role => {
-            if(userRoles.get(role.id)) {
+            if (userRoles.get(role.id)) {
                 permiso = true;
             }
         });
 
-        if(!permiso) {
-            await interaction.reply({content: `No tienes permisos para administrar el banco`, ephemeral: true});
+        if (!permiso) {
+            await interaction.reply({ content: `No tienes permisos para administrar el banco`, ephemeral: true });
             return;
         }
 
@@ -32,6 +32,8 @@ export default {
             let transactions = await user.getTransactions();
             const saldo = transactions.map(transaction => transaction.quantity)
                 .reduce((sum, transaction) => sum + transaction);
+
+            if (saldo <= 0) continue;
 
             content += `${user.nickname}: $${saldo}\n`;
             sum += saldo;
