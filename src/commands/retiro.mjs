@@ -54,6 +54,11 @@ export default {
             return;
         }
 
+        if(target.id != user.id && target.id == 561728191816007722) {
+            await interaction.reply({content: `Este usuario no acepta retiros de pendejos o.o`, ephemeral: true});
+            return;
+        }
+
         const transaction = await user.createTransaction({
             quantity: -quantity
         });
