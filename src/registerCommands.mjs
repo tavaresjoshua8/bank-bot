@@ -5,7 +5,7 @@ import path from "node:path";
 import { config } from "dotenv";
 
 config();
-const { clientId, guildId, token } = process.env;
+const { clientId, token } = process.env;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -39,7 +39,7 @@ searchCommands().then(async () => {
 
         // The put method is used to fully refresh all commands in the guild with the current set
         const data = await rest.put(
-            Routes.applicationGuildCommands(clientId, guildId),
+            Routes.applicationCommands(clientId),
             { body: commands }
         );
 

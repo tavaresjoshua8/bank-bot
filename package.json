@@ -4,6 +4,7 @@
   "description": "Banco Creado para la Federacion",
   "main": "src/index.mjs",
   "scripts": {
+    "dev": "node ./src/index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "OffShadowX",
